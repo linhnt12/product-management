@@ -1,5 +1,5 @@
 module.exports.generateRandomString = (length) => {
-  const characters = "ABCDEFGHIKLMNOPQRSTUVWYZabcsdefghiklmnopqrstuvwyz0123456789";
+  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
   let result = "";
 
