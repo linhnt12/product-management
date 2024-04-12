@@ -6,7 +6,7 @@ const {
 
 const systemConfig = require("../../config/system");
 
-// [GET] /admin/login
+// [GET] /admin/auth/login
 module.exports.login = (req, res) => {
   if (req.cookies.token) {
     res.redirect(`${systemConfig.prefixAdmin}/dashboard`);
@@ -17,7 +17,7 @@ module.exports.login = (req, res) => {
   }
 }
 
-// [POST] /admin/login
+// [POST] /admin/auth/login
 module.exports.loginPost = async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
@@ -48,7 +48,7 @@ module.exports.loginPost = async (req, res) => {
   res.redirect(`${systemConfig.prefixAdmin}/dashboard`);
 }
 
-// [GET] /admin/logout
+// [GET] /admin/auth/logout
 module.exports.logout = (req, res) => {
   res.clearCookie("token");
   res.redirect(`${systemConfig.prefixAdmin}/auth/login`);
